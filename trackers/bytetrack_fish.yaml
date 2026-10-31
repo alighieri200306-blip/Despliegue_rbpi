@@ -1,0 +1,12 @@
+# Configuracion de ByteTrack para Ultralytics (equivale a bytetrack.yaml con ajustes para peces).
+# Parametros a ajustar si hay muchos cambios de ID o tracks fantasma:
+#   - track_high_thresh: subirlo reduce tracks fantasma por falsos positivos (p. ej. Nano)
+#   - track_buffer: frames que un track perdido se conserva (sube si hay oclusiones largas)
+#   - match_thresh: umbral de asociacion por IoU (mas bajo = mas permisivo)
+tracker_type: bytetrack
+track_high_thresh: 0.25   # umbral de la 1a asociacion (detecciones de alta confianza)
+track_low_thresh: 0.1     # umbral de la 2a asociacion (detecciones de baja confianza)
+new_track_thresh: 0.25    # confianza minima para iniciar un track nuevo
+track_buffer: 30          # frames que se conserva un track sin asociar
+match_thresh: 0.8         # umbral de asociacion
+fuse_score: True
